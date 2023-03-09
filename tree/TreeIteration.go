@@ -1,5 +1,6 @@
 package main
 
+//  TODO 二叉树 迭代遍历
 func preIter(root *TreeNode) []int{
 	var res []int
 	var stack []*TreeNode
