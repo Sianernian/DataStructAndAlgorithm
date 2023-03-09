@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/big"
+)
 
 
 /*
@@ -14,7 +17,12 @@ import "fmt"
 输入：s = "()"
 输出：true
 */
+const DIFF = 200
 func main(){
+	init := big.NewInt(DIFF)
+	a:=init.Lsh(init, 255-DIFF)
+	fmt.Println(a)
+	//1617596800029038387680020905221177840418228665352434348866216614952960
 	s :="{()]"
 	fmt.Println(isValid(s))
 }
