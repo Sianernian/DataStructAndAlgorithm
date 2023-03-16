@@ -10,7 +10,7 @@ func main() {
 	a.Right.Right=&TreeNode{Val: 15}
 	a.Right.Left=&TreeNode{Val: 7}
 
-	fmt.Println(levelOrder2(&a))
+	fmt.Println(levelOrder(&a))
 }
 
 
@@ -39,34 +39,6 @@ func levelOrder (root *TreeNode)[][]int{
 			}
 		}
 		res =append(res,res2)
-	}
-	return res
-}
-
-func levelOrder2(root *TreeNode) [][]int {
-	// 通过队列的方式进行操作
-	que := make([]*TreeNode, 0)
-	que = append(que, root)
-
-	res := make([][]int, 0)
-	if root == nil { // 如果为空，则 返回 空值
-		return res
-	}
-
-	for len(que) != 0 {
-		res2 := make([]int, 0) // 存放当前 元素
-		for i := 0; i < len(que); i++ {
-			fir := que[0]
-			res2 = append(res2, fir.Val)
-			que = que[1:] // 弹出第一个值
-			if fir.Left != nil { //拿左边值
-				que = append(que, fir.Left)
-			}
-			if fir.Right != nil { // 右边值
-				que = append(que, fir.Right)
-			}
-		}
-		res = append(res, res2)
 	}
 	return res
 }
